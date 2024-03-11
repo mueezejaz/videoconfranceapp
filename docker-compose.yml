@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+      - "2000-2020:2000-2020"
+    environment:
+      - PYTHON=python3
+      - MEDIASOUP_WORKER_BIN="\node_modules\mediasoup\worker\out\Release\mediasoup-worker.exe"
+    volumes:
+      - .:/app
